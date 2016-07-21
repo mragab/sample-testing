@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MathTest {
 
@@ -24,6 +25,13 @@ public class MathTest {
     public void testDivWithHamcrestMatchers() throws Exception {
         final Math math = new Math();
         assertThat("Division", math.div(3, 2), is(1.5));
+    }
+
+    @Test
+    public void testDivWithExpression() throws Exception {
+        final Math math = new Math();
+        Double d = math.div(3, 2);
+        assertTrue(d > 0 && d < 10);
     }
 
     @Test(expected = IllegalArgumentException.class)

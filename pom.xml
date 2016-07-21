@@ -35,7 +35,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <scala.version>2.11.4</scala.version>
+                <scala.version>2.11.8</scala.version>
             </properties>
             <build>
                 <defaultGoal>scala:cctest</defaultGoal>

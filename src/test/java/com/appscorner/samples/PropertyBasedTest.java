@@ -18,11 +18,12 @@ public class PropertyBasedTest {
     public void testListOfStringSoft(@ForAll List<String> ls) throws Exception {
         String curr;
         String prev = null;
-        ls.sort(Comparator.<String>naturalOrder());
+        ls.sort(Comparator.naturalOrder());
         for (String aStr : ls) {
             if (null == prev) prev = aStr;
             curr = aStr;
             assertThat("Elements should be sorted", curr.compareTo(prev)>-1, is(true));
+            prev = curr;
         }
     }
 }
